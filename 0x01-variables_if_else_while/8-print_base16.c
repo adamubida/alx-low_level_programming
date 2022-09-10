@@ -1,20 +1,20 @@
-i#include <stdio.h>
+#include <stdio.h>
+
 /**
-* main - Entry point
-* Return:0
+ * main - a simple program that outputs the hexadecimal digits
+ *
+ * Return: 0 on success
  */
 int main(void)
 {
-	int i, y;
-	for (i = 0; i < 10; i++)
-	{
-		putchar (i + '0');
-	}
-	for (y = 'a'; y <= 'f'; y++)
-	{
-		putchar (y);
-	}
+	char alpha = '0';
+	int i;
 
-putchar('\n');
-return (0);
+	for (i = 0; i < 10; i++, alpha++)
+		putchar(alpha);
+	alpha = 'a';
+	for (i = 0; i < 6; i++, alpha++)
+		putchar(alpha);
+	putchar('\n');
+	return (0);
 }
