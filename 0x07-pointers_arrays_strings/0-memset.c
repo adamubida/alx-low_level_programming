@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * *_memset - concatenates two strings
@@ -18,4 +18,4 @@ char *_memset(char *s, char b, unsigned int n)
 	}
 
 	return (s);
-}
+i}
