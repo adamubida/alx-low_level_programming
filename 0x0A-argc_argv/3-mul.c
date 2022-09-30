@@ -1,29 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "mainn.h"
+
 /**
- * main - Entry Point
- * atoi is a function that converts a string into an int
- * @argc: arguments
- * @argv: array pointing to arguments
- * Return: 0
+ * main - multiply the args
+ * @argc: Argument count
+ * @argv: Array of argument strings
+ *
+ * Return: 0 for successful exit
  */
 int main(int argc, char *argv[])
 {
-	int i, res = 1;
-
-	if (argc != 3)
+	if (argc < 2)
 	{
-		printf("%s\n", "Error");
-		return (1);
+		printf("Error");
 	}
 	else
 	{
-		for (i = 1; i < argc; i++)
-		{
-			res *= atoi(argv[i]);
-		}
-		printf("%d\n", res);
+		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 	}
+
 	return (0);
 }
