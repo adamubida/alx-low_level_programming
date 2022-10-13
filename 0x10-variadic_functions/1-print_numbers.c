@@ -9,7 +9,9 @@
 (* section header: the header of this function is variadic_functions.h)*
 * Return: no retunr.
 */
+
 void print_numbers(const char *separator, const unsigned int n, ...)
+
 {
 	va_list num;
 	unsigned int i;
