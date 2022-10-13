@@ -1,47 +1,26 @@
-#include "variadic_functions.h"
-
+include "variadic_functions.h"
+#include <stdarg.h>
+#include <stdio.h>
 /**
- * print_number - Function that prints an integer.
- * @n: int type number
- * Description: Can only use _putchar to print.
+ * print_numbers - print variadic number
+ * @separator: char
+ * @n:variadic variable count
+ * Return :void
  */
-void print_number(int n)
+void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	long m; /* power of 10 */
-	int c; /* boolean check */
-	long num; /* convert int to long */
+	va_list list;
+	unsigned int i;
 
-	num = n;
-	/* negatives */
-	if (num < 0)
+	va_start(list, n);
+for (i = 0; i < n; i++)
+{
+	printf("%d", va_arg(list, int));
+	if (separator && i < n - 1)
 	{
-		num *= -1;
-		_putchar('-');
+		printf("%s", separator);
 	}
-
-	/* count up */
-	m = 1;
-	c = 1;
-	while (c)
-	{
-		if (num / (m * 10) > 0)
-			m *= 10;
-		else
-			c = 0;
-	}
-
-	/* count down */
-	while (num >= 0)
-	{
-		if (m == 1)
-		{
-			_putchar(num % 10 + '0');
-			num = -1;
-		}
-		else
-		{
-			_putchar((num / m % 10) + '0');
-			m /= 10;
-		}
-	}
+}
+	printf("\n");
+	va_end(list);
 }
