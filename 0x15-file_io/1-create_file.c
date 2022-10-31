@@ -26,3 +26,7 @@ if (text_content)
 	if (rstatus == -1)
 		return (-1);
 }
+
+close(fd);
+return (1);
+}
